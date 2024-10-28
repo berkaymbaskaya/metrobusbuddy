@@ -1,4 +1,4 @@
-import 'package:workspace/models/class/station.dart';
+import 'package:workspace/core/class/station.dart';
 
 const List<Map<String, dynamic>> metrobusStations = [
   {"id": 0, "station": "Söğütlüçeşme", "lat": 40.991442, "long": 29.037863},
