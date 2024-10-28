@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:workspace/core/enum/journey_direction_enum.dart';
 import 'package:workspace/core/operation/station_operation.dart';
-import 'package:workspace/core/class/station.dart';
+import 'package:workspace/core/model/station.dart';
 
 // Durakları tutacak sınıf
 class JourneyProvider with ChangeNotifier {
   IStation? _startStation = DataOperation().getRandomStation();
   IStation? _endStation = DataOperation().getRandomStation();
+  JourneyDirectionEnum? _journeyDirectionEnum = JourneyDirectionEnum.sb;
 
   // Başlangıç durağını al
   IStation? get startStation => _startStation;
@@ -24,4 +26,6 @@ class JourneyProvider with ChangeNotifier {
     _endStation = station;
     notifyListeners(); // Değişiklikleri bildirmek için
   }
+
+  void setJourneyState() {}
 }

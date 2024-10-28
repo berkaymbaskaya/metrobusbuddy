@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:workspace/core/constant/metrobus_station_constant.dart';
 import 'package:workspace/core/providers/journey_provider.dart';
 import 'package:workspace/features/profile.dart';
-import 'package:workspace/core/class/station.dart';
+import 'package:workspace/core/model/station.dart';
 
 class JourneyStartWidget extends StatefulWidget {
   const JourneyStartWidget({super.key});

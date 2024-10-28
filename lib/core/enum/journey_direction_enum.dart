@@ -1,4 +1,4 @@
 enum JourneyDirectionEnum {
-  sb,
-  bs,
+  sb, //Sogutlucesme - Beylikduzu
+  bs, //Beylikduzu - Sogutlucesme
 }

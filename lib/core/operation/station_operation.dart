@@ -1,7 +1,8 @@
 // lib/operations/data_operation.dart
 import 'dart:math';
-import 'package:workspace/core/class/station.dart';
+import 'package:workspace/core/model/station.dart';
 import 'package:workspace/core/constant/metrobus_station_constant.dart';
+import 'package:workspace/core/enum/journey_direction_enum.dart';
 
 class DataOperation {
   final List<Station> stations =
@@ -15,5 +16,11 @@ class DataOperation {
   calculateNextStation() {
     // İşlemler
   }
-  calculateDirection() {}
+  calculateDirection(IStation startStation, IStation endStation) {
+    if (startStation.id > endStation.id) {
+      return JourneyDirectionEnum.bs;
+    } else {
+      return JourneyDirectionEnum.sb;
+    }
+  }
 }
