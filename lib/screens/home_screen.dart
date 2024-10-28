@@ -8,20 +8,6 @@ class HomeScreen extends StatefulWidget {
 
   @override
   _HomeScreenState createState() => _HomeScreenState();
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     appBar: AppBar(
-  //       title: const Text('Home Screen'),
-  //     ),
-  //     body: Center(
-  //       child: StationWidget(
-  //         previousStation: DataOperation().getRandomStation(),
-  //         currentStation: DataOperation().getRandomStation(),
-  //         nextStation: DataOperation().getRandomStation(),
-  //       ),
-  //     ),
-  //   );
-  // }
 }
 
 class _HomeScreenState extends State<HomeScreen> {

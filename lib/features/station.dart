@@ -19,19 +19,37 @@ class StationWidget extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         // Previous Station
-        StationInfo(
-          label: 'Previous Station',
-          stationName: previousStation.station,
-        ),
-        const SizedBox(height: 10),
+        Card(
+            child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: StationInfo(
+            label: 'Previous Station',
+            stationName: previousStation.station,
+          ),
+        )),
+        const SizedBox(height: 15),
         // Current Station
-        StationInfo(
-          label: 'Current Station',
-          stationName: currentStation.station,
-          isCurrent: true,
+        SizedBox(
+          width: MediaQuery.of(context).size.width * 0.5, // Ekranın %80'i,
+          child: Card(
+            child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                child: StationInfo(
+                    label: 'Current Station',
+                    stationName: currentStation.station,
+                    isCurrent: true)),
+          ),
         ),
-        const SizedBox(height: 10),
-        StationInfo(label: 'Next Station', stationName: nextStation.station),
+        const SizedBox(height: 15),
+        Card(
+          child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: StationInfo(
+                label: 'Next Station',
+                stationName: nextStation.station,
+              )),
+        ),
       ],
     );
   }
