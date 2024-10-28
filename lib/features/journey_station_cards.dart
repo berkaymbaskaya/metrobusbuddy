@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:workspace/features/station_info.dart';
 import 'package:workspace/models/class/station.dart';
 
-class StationWidget extends StatelessWidget {
+class JourneyStationCards extends StatelessWidget {
   final IStation previousStation;
   final IStation currentStation;
   final IStation nextStation;
 
-  const StationWidget({
+  const JourneyStationCards({
     super.key,
     required this.currentStation,
     required this.previousStation,
