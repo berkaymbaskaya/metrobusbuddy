@@ -6,7 +6,7 @@ import 'package:workspace/features/profile.dart';
 import 'package:workspace/models/class/station.dart';
 
 class JourneyStartWidget extends StatefulWidget {
-  const JourneyStartWidget({Key? key}) : super(key: key);
+  const JourneyStartWidget({super.key});
 
   @override
   _JourneyStartWidget createState() => _JourneyStartWidget();

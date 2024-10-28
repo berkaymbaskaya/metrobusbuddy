@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:workspace/core/operation/station_operation.dart';
 import 'package:workspace/models/class/station.dart';
 
 // Durakları tutacak sınıf
 class JourneyProvider with ChangeNotifier {
-  IStation? _startStation;
-  IStation? _endStation;
+  IStation? _startStation = DataOperation().getRandomStation();
+  IStation? _endStation = DataOperation().getRandomStation();
 
   // Başlangıç durağını al
   IStation? get startStation => _startStation;

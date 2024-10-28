@@ -41,9 +41,9 @@ class MyApp extends StatelessWidget {
       themeMode: themeProvider.themeMode,
       home: const HomeScreen(),
       initialRoute: '/',
-      routes: {
-        '/': (context) => const HomeScreen(), // Ana sayfa rotası
-      },
+      // routes: {
+      //   '/': (context) => const HomeScreen(), // Ana sayfa rotası
+      // },
     );
   }
 }
