@@ -1,6 +1,6 @@
 // lib/operations/data_operation.dart
 import 'dart:math';
-import 'package:workspace/models/class/station.dart';
+import 'package:workspace/core/class/station.dart';
 import 'package:workspace/core/constant/metrobus_station_constant.dart';
 
 class DataOperation {
@@ -11,4 +11,9 @@ class DataOperation {
   IStation getRandomStation() {
     return stations[Random().nextInt(stations.length)];
   }
+
+  calculateNextStation() {
+    // İşlemler
+  }
+  calculateDirection() {}
 }

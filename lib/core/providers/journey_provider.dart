@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workspace/core/operation/station_operation.dart';
-import 'package:workspace/models/class/station.dart';
+import 'package:workspace/core/class/station.dart';
 
 // Durakları tutacak sınıf
 class JourneyProvider with ChangeNotifier {
