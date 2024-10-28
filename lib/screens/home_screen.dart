@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workspace/core/operation/station_operation.dart';
+import 'package:workspace/features/journey_start.dart';
 import 'package:workspace/features/profile.dart';
 import 'package:workspace/features/station.dart';
 import 'package:workspace/models/class/station.dart';
@@ -23,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
         nextStation: DataOperation().getRandomStation(),
       ),
     ),
-    Center(child: Text('Search Page', style: TextStyle(fontSize: 24))),
+    const Center(child: JourneyStartWidget()),
     const Center(child: ProfileScreen()),
   ];
 
@@ -44,8 +45,8 @@ class _HomeScreenState extends State<HomeScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(Icons.navigation),
+            label: 'Journey',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.search),

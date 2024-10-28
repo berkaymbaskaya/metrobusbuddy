@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:workspace/core/providers/journey_provider.dart';
 import 'package:workspace/core/providers/theme_provider.dart';
 import 'package:workspace/screens/home_screen.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => ThemeProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => ThemeProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => JourneyProvider(),
+        ),
+      ],
       child: const MyApp(),
     ),
   );
@@ -32,6 +40,10 @@ class MyApp extends StatelessWidget {
       ),
       themeMode: themeProvider.themeMode,
       home: const HomeScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(), // Ana sayfa rotası
+      },
     );
   }
 }

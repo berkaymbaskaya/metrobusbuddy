@@ -1,3 +1,5 @@
+import 'package:workspace/models/class/station.dart';
+
 const List<Map<String, dynamic>> metrobusStations = [
   {"id": 0, "station": "Söğütlüçeşme", "lat": 40.991442, "long": 29.037863},
   {"id": 1, "station": "Fikirtepe", "lat": 40.993656, "long": 29.047085},
@@ -105,3 +107,6 @@ const List<Map<String, dynamic>> metrobusStations = [
   {"id": 43, "station": "Hadımköy", "lat": 41.019286, "long": 28.631496},
   {"id": 44, "station": "Tüyap", "lat": 41.022058, "long": 28.623512}
 ];
+final List<IStation> stationList = metrobusStations
+    .map((stationData) => Station.fromMap(stationData))
+    .toList();

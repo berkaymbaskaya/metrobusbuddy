@@ -73,20 +73,15 @@ class StationInfo extends StatelessWidget {
       children: [
         Text(
           label,
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-            color: Colors.grey[700],
-          ),
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         const SizedBox(height: 5),
         Text(
           stationName,
           style: TextStyle(
-            fontSize: 20,
-            fontWeight: isCurrent ? FontWeight.bold : FontWeight.normal,
-            color: isCurrent ? Colors.blue : Colors.black,
-          ),
+              fontSize: 20,
+              fontWeight: isCurrent ? FontWeight.bold : FontWeight.normal,
+              color: isCurrent ? Colors.blue : null),
         ),
       ],
     );
