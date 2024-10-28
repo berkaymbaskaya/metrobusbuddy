@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workspace/core/operation/station_operation.dart';
+import 'package:workspace/features/profile.dart';
 import 'package:workspace/features/station.dart';
 import 'package:workspace/models/class/station.dart';
 
@@ -23,7 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     ),
     Center(child: Text('Search Page', style: TextStyle(fontSize: 24))),
-    Center(child: Text('Profile Page', style: TextStyle(fontSize: 24))),
+    const Center(child: ProfileScreen()),
   ];
 
   // Sekme seçildiğinde sayfayı değiştirmek için kullanılan fonksiyon
