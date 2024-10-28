@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:workspace/core/operation/station_operation.dart';
+import 'package:workspace/core/providers/bottom_navigation_provider.dart';
 import 'package:workspace/features/journey/journey_start_form.dart';
 import 'package:workspace/features/profile.dart';
 import 'package:workspace/features/journey/journey_station_cards.dart';
@@ -17,14 +19,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // Sekmelere göre gösterilecek sayfaları tanımlıyoruz
   final List<Widget> _pages = <Widget>[
-    Center(
-      child: JourneyStationCards(
-        previousStation: DataOperation().getRandomStation(),
-        currentStation: DataOperation().getRandomStation(),
-        nextStation: DataOperation().getRandomStation(),
-      ),
-    ),
     const Center(child: JourneyStartWidget()),
+    Center(
+      child: JourneyStationCards(),
+    ),
     const Center(child: ProfileScreen()),
   ];
 
@@ -41,25 +39,36 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         title: const Text('Home Screen'),
       ),
-      body: _pages[_selectedIndex], // Seçilen sayfayı göstermek için
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.navigation),
-            label: 'Journey',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blue,
-        onTap: _onItemTapped,
+      body: Consumer<BottomNavigationProvider>(
+        builder: (context, provider, child) {
+          return IndexedStack(
+            index: provider.selectedIndex,
+            children: _pages,
+          );
+        },
+      ), // Seçilen sayfayı göstermek için
+      bottomNavigationBar: Consumer<BottomNavigationProvider>(
+        builder: (context, provider, child) {
+          return BottomNavigationBar(
+            items: const <BottomNavigationBarItem>[
+              BottomNavigationBarItem(
+                icon: Icon(Icons.navigation),
+                label: 'Journey',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: 'Search',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.person),
+                label: 'Profile',
+              ),
+            ],
+            currentIndex: provider.selectedIndex,
+            selectedItemColor: Colors.blue,
+            onTap: provider.setData,
+          );
+        },
       ),
     );
   }
