@@ -3,7 +3,7 @@ import 'package:workspace/core/operation/station_operation.dart';
 import 'package:workspace/features/journey/journey_start_form.dart';
 import 'package:workspace/features/profile.dart';
 import 'package:workspace/features/journey/journey_station_cards.dart';
-import 'package:workspace/models/class/station.dart';
+import 'package:workspace/core/class/station.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
