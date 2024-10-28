@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:workspace/core/operation/station_operation.dart';
-import 'package:workspace/features/journey_start_form.dart';
+import 'package:workspace/features/journey/journey_start_form.dart';
 import 'package:workspace/features/profile.dart';
-import 'package:workspace/features/station.dart';
+import 'package:workspace/features/journey/journey_station_cards.dart';
 import 'package:workspace/models/class/station.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // Sekmelere göre gösterilecek sayfaları tanımlıyoruz
   final List<Widget> _pages = <Widget>[
     Center(
-      child: StationWidget(
+      child: JourneyStationCards(
         previousStation: DataOperation().getRandomStation(),
         currentStation: DataOperation().getRandomStation(),
         nextStation: DataOperation().getRandomStation(),

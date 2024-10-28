@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:workspace/features/station_info.dart';
+import 'package:workspace/features/journey/station_info.dart';
 import 'package:workspace/models/class/station.dart';
 
 class JourneyStationCards extends StatelessWidget {
