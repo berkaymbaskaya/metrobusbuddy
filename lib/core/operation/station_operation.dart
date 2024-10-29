@@ -13,9 +13,17 @@ class DataOperation {
     return stations[Random().nextInt(stations.length)];
   }
 
-  calculateNextStation() {
-    // İşlemler
+  calculateNextStation(
+      IStation currentStation, JourneyDirectionEnum direction) {
+    if (direction == JourneyDirectionEnum.sb) {
+      return stations
+          .firstWhere((element) => element.id == currentStation.id + 1);
+    } else {
+      return stations
+          .firstWhere((element) => element.id == currentStation.id - 1);
+    }
   }
+
   calculateDirection(IStation startStation, IStation endStation) {
     if (startStation.id > endStation.id) {
       return JourneyDirectionEnum.bs;

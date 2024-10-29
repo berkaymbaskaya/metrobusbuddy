@@ -7,14 +7,12 @@ import 'package:workspace/features/journey/station_info.dart';
 import 'package:workspace/core/model/station.dart';
 
 class JourneyStationCards extends StatelessWidget {
-  final IStation previousStation = DataOperation().getRandomStation();
-  final IStation currentStation = DataOperation().getRandomStation();
-  final IStation nextStation = DataOperation().getRandomStation();
-
   @override
   Widget build(BuildContext context) {
     final IJourney? journey = Provider.of<JourneyProvider>(context).getData();
-
+    final IStation currentStation = journey!.startStation;
+    final IStation nextStation = DataOperation()
+        .calculateNextStation(journey.startStation, journey.journeyDirection);
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
